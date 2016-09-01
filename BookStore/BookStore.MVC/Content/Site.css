@@ -22,3 +22,24 @@ select,
 textarea {
     max-width: 280px;
 }
+   
+    footer h3 {
+        margin-bottom: 30px;
+    }
+
+   footer  .footer-above {
+        padding-top: 50px;
+        background-color:#305479;
+        color:white;
+    }
+
+    footer .footer-col {
+        margin-bottom: 50px;
+    }
+
+    footer .footer-below {
+        padding: 25px 0;
+        background-color:#233140;
+        color:white;
+    }
+   
