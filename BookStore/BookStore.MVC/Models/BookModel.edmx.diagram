@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b46650cbb9ea4e1fb48dc9af3b4e40d3" Name="Diagram1">
+        <EntityTypeShape EntityType="BookStore.DataBaseModel.Author" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStore.DataBaseModel.CountryPublished" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStore.DataBaseModel.Genre" Width="1.5" PointX="3.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStore.DataBaseModel.PhoneCode" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStore.DataBaseModel.User" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStore.DataBaseModel.Book" Width="1.5" PointX="6" PointY="3.5" IsExpanded="true" />
+        <AssociationConnector Association="BookStore.DataBaseModel.FK_Books_Authors" ManuallyRouted="false" />
+        <AssociationConnector Association="BookStore.DataBaseModel.FK_Books_PublishedCountry" ManuallyRouted="false" />
+        <AssociationConnector Association="BookStore.DataBaseModel.FK_PhoneCodes_CountryPublished" ManuallyRouted="false" />
+        <AssociationConnector Association="BookStore.DataBaseModel.FK_Books_Genres" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
