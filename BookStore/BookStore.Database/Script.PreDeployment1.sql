@@ -9,6 +9,17 @@
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
+/*
+ Pre-Deployment Script Template							
+--------------------------------------------------------------------------------------
+ This file contains SQL statements that will be executed before the build script.	
+ Use SQLCMD syntax to include a file in the pre-deployment script.			
+ Example:      :r .\myfile.sql								
+ Use SQLCMD syntax to reference a variable in the pre-deployment script.		
+ Example:      :setvar TableName MyTable							
+               SELECT * FROM [$(TableName)]					
+--------------------------------------------------------------------------------------
+*/
 
 /****** Object:  Table [dbo].[Authors]    Script Date: 9/2/2016 12:06:00 PM ******/
 SET ANSI_NULLS ON
@@ -39,7 +50,7 @@ CREATE TABLE [dbo].[Books](
 	[Name] [nvarchar](50) NOT NULL,
 	[Price] [decimal](18, 2) NOT NULL,
 	[Description] [nvarchar](max) NULL,
-	[Image] [varbinary](max) null,
+	[Image] [image] null,
 	[PagesCount] [int] NULL,
 	[CreationDate] [datetime] NULL,
 	[LastModificationDate] [datetime] NULL,
@@ -147,6 +158,18 @@ INSERT [dbo].[Genres]([Name]) VALUES('Tragedy')
 
 --SET IDENTITY_INSERT [dbo].[Books] ON
 INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+
 --SET IDENTITY_INSERT [dbo].[Books] OFF
 
 GO

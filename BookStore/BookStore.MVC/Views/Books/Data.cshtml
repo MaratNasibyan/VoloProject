@@ -1,0 +1,19 @@
+﻿
+@model IEnumerable<BookStore.MVC.Models.Book>
+
+@foreach (var v in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(n => v.Name)
+            @Html.DisplayFor(n => v.Price)
+            @Html.DisplayFor(n => v.Description)
+            @Html.DisplayFor(n => v.Image)
+            @Html.DisplayFor(n => v.PagesCount)
+            @Html.DisplayFor(n => v.Author.Name)
+            @Html.DisplayFor(n => v.Genre.Name)
+            @Html.DisplayFor(n => v.CountryPublished.Name)
+            @Html.DisplayFor(n => v.Author.Name)
+        </td>
+    </tr>
+}

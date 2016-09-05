@@ -9,8 +9,6 @@
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-
-/****** Object:  Table [dbo].[Authors]    Script Date: 9/2/2016 12:06:00 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -39,7 +37,7 @@ CREATE TABLE [dbo].[Books](
 	[Name] [nvarchar](50) NOT NULL,
 	[Price] [decimal](18, 2) NOT NULL,
 	[Description] [nvarchar](max) NULL,
-	[Image] [varbinary](max) null,
+	[Image] [image] null,
 	[PagesCount] [int] NULL,
 	[CreationDate] [datetime] NULL,
 	[LastModificationDate] [datetime] NULL,
@@ -147,6 +145,18 @@ INSERT [dbo].[Genres]([Name]) VALUES('Tragedy')
 
 --SET IDENTITY_INSERT [dbo].[Books] ON
 INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+INSERT [Books]([Name],[Price],[Description],[PagesCount],[AuthorsId],[GenreId],[CountryPublishedId]) VALUES('Alhimik',1500,'Interesed book',350,1,2,1)
+
 --SET IDENTITY_INSERT [dbo].[Books] OFF
 
 GO

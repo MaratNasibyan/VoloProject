@@ -27,7 +27,7 @@ namespace BookStore.MVC.Models
         public int CountryPublishedId { get; set; }
     
         public virtual Author Author { get; set; }
-        public virtual CountryPublished CountryPublished { get; set; }
         public virtual Genre Genre { get; set; }
+        public virtual CountryPublished CountryPublished { get; set; }
     }
 }
