@@ -16,17 +16,32 @@ namespace BookStore.MVC.Controllers
         private Entities1 db = new Entities1();
 
         // GET: Books
-        public async Task<ActionResult> Index()
+
+        public ActionResult Index()
         {
-            var books = db.Books.Include(b => b.Author).Include(b => b.Genre).Include(b => b.CountryPublished);
-            return View(await books.ToListAsync());
+            return View();
         }
+
+
+        [HttpPost]
+        public ActionResult Index(int? id)
+        {
+            //  var books = db.Books.Include(b => b.Author).Include(b => b.Genre).Include(b => b.CountryPublished);
+            //   return View(books.ToList());
+            return View("Index", (object)id);
+        }
+
+        //[HttpPost]
+        //public ActionResult Index(int? id)
+        //{
+        //    return View("Index", (object)id);
+        //}
 
         //[HttpPost]
         //public async Task<ActionResult> Index(int? search)
         //{
         //    var books = db.Books.Include(b => b.Author).Include(b => b.Genre).Include(b => b.CountryPublished);
-        //    if(search != 0)
+        //    if (search != 0)
         //    {
         //        books = books.Where(n => n.Id == search);
         //    }
@@ -35,7 +50,7 @@ namespace BookStore.MVC.Controllers
         //}
 
 
-        [HttpGet]
+
         public  ActionResult Data(int? id)
         {
             var books = db.Books.Include(b => b.Author).Include(b => b.Genre).Include(b => b.CountryPublished);
