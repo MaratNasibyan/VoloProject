@@ -7,27 +7,33 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BookStore.MVC.Models
+namespace BookStore.Entities
 {
     using System;
     using System.Collections.Generic;
     
     public partial class Book
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Book()
+        {
+            this.AttributeBooks = new HashSet<AttributeBook>();
+            this.ImagePatchs = new HashSet<ImagePatch>();
+        }
+    
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string Title { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
-        public byte[] Image { get; set; }
         public Nullable<int> PagesCount { get; set; }
-        public Nullable<System.DateTime> CreationDate { get; set; }
-        public Nullable<System.DateTime> LastModificationDate { get; set; }
-        public int AuthorsId { get; set; }
-        public int GenreId { get; set; }
         public int CountryPublishedId { get; set; }
+        public int AuthorsId { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AttributeBook> AttributeBooks { get; set; }
         public virtual Author Author { get; set; }
-        public virtual Genre Genre { get; set; }
         public virtual CountryPublished CountryPublished { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ImagePatch> ImagePatchs { get; set; }
     }
 }

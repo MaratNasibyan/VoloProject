@@ -1,88 +1,63 @@
-﻿@*@model IEnumerable<BookStore.MVC.Models.Book>*@
+﻿@model IEnumerable<BookStore.Entities.Book>
 
 @{
     ViewBag.Title = "Index";
-
-    var options = new AjaxOptions
-    {
-        UpdateTargetId = "tableAjax",
-        Url = Url.Action("Data")
-    };
-
 }
 
-<h2>Books</h2>
+<h2>Index</h2>
 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PagesCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Author.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CountryPublished.CountryName)
+        </th>
+        <th></th>
+    </tr>
 
-
-@using (Ajax.BeginForm(options))
-{
-    <table class="table" cellpadding="4">
-
-        <thead>Name</thead>
-        <thead>Name</thead>
-        <thead>Name</thead>
-        <thead>Name</thead>
-        <thead>Name</thead>
-        <thead>Name</thead>
-        <thead>Name</thead>
-        <thead>Name</thead>
-        <thead>Name</thead>
-        <thead>Name</thead>
-        <thead>Name</thead>
-        <tbody id="tableAjax">
-            @Html.Action("Data", new { Id = Model })
-        </tbody>          
-    </table>
-    <p>
-        @Html.TextBox("Id")
-        <input type="submit" value="submit" />
-               
-    </p>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PagesCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CountryPublished.CountryName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
 }
 
-
-
-
-
-
-
-<div class="container">
-
-    <!-- Page Heading -->
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">
-                Page Heading
-                <small>Secondary Text</small>
-            </h1>
-        </div>
-    </div>
-    <!-- /.row -->
-    <!-- Projects Row -->
-
-    <div class="col-md-3 portfolio-item">
-        <a href="#">
-            <img class="img-responsive" src="~/ImagesBook/DorianGrey.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-3 portfolio-item">
-        <a href="#">
-            <img class="img-responsive" src="~/ImagesBook/love.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-3 portfolio-item">
-        <a href="#">
-            <img class="img-responsive" src="~/ImagesBook/rose.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-3 portfolio-item">
-        <a href="#">
-            <img class="img-responsive" src="~/ImagesBook/HarryPoter.jpg" alt="">
-        </a>
-    </div>
-</div>
-@section scripts{
-<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
-<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-}
+</table>

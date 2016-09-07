@@ -59,6 +59,6 @@
     <Folder Include="Properties" />
   </ItemGroup>
   <ItemGroup>
-    <PreDeploy Include="Script.PreDeployment1.sql" />
+    <PreDeploy Include="CreateScript.sql" />
   </ItemGroup>
 </Project>

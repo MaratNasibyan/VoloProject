@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BookStore.MVC.Models
+namespace BookStore.Entities
 {
     using System;
     using System.Collections.Generic;
@@ -18,18 +18,14 @@ namespace BookStore.MVC.Models
         public CountryPublished()
         {
             this.Books = new HashSet<Book>();
-            this.PhoneCodes = new HashSet<PhoneCode>();
         }
     
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string CountryName { get; set; }
         public string IsoCode { get; set; }
-        public Nullable<System.DateTime> CreationDate { get; set; }
-        public Nullable<System.DateTime> LastModificationDate { get; set; }
+        public int PhoneCode { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Book> Books { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PhoneCode> PhoneCodes { get; set; }
     }
 }

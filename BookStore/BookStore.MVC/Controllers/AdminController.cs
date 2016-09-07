@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using BookStore.MVC.Models;
+using BookStore.Entities;
 
 namespace BookStore.MVC.Controllers
 {
     public class AdminController : Controller
     {
-        private Entities1 db = new Entities1();
+        private BookDatabaseEntities db = new BookDatabaseEntities();
 
         // GET: Admin
         public async Task<ActionResult> Index()
         {
-            var books = db.Books.Include(b => b.Author).Include(b => b.Genre).Include(b => b.CountryPublished);
+            var books = db.Books.Include(b => b.Author).Include(b => b.CountryPublished);
             return View(await books.ToListAsync());
         }
 
@@ -40,9 +40,8 @@ namespace BookStore.MVC.Controllers
         // GET: Admin/Create
         public ActionResult Create()
         {
-            ViewBag.AuthorsId = new SelectList(db.Authors, "Id", "Name");
-            ViewBag.GenreId = new SelectList(db.Genres, "Id", "Name");
-            ViewBag.CountryPublishedId = new SelectList(db.CountryPublisheds, "Id", "Name");
+            ViewBag.AuthorsId = new SelectList(db.Authors, "Id", "FullName");
+            ViewBag.CountryPublishedId = new SelectList(db.CountryPublisheds, "Id", "CountryName");
             return View();
         }
 
@@ -51,7 +50,7 @@ namespace BookStore.MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Name,Price,Description,Image,PagesCount,CreationDate,LastModificationDate,AuthorsId,GenreId,CountryPublishedId")] Book book)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Title,Price,Description,PagesCount,CountryPublishedId,AuthorsId")] Book book)
         {
             if (ModelState.IsValid)
             {
@@ -60,9 +59,8 @@ namespace BookStore.MVC.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AuthorsId = new SelectList(db.Authors, "Id", "Name", book.AuthorsId);
-            ViewBag.GenreId = new SelectList(db.Genres, "Id", "Name", book.GenreId);
-            ViewBag.CountryPublishedId = new SelectList(db.CountryPublisheds, "Id", "Name", book.CountryPublishedId);
+            ViewBag.AuthorsId = new SelectList(db.Authors, "Id", "FullName", book.AuthorsId);
+            ViewBag.CountryPublishedId = new SelectList(db.CountryPublisheds, "Id", "CountryName", book.CountryPublishedId);
             return View(book);
         }
 
@@ -78,9 +76,8 @@ namespace BookStore.MVC.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.AuthorsId = new SelectList(db.Authors, "Id", "Name", book.AuthorsId);
-            ViewBag.GenreId = new SelectList(db.Genres, "Id", "Name", book.GenreId);
-            ViewBag.CountryPublishedId = new SelectList(db.CountryPublisheds, "Id", "Name", book.CountryPublishedId);
+            ViewBag.AuthorsId = new SelectList(db.Authors, "Id", "FullName", book.AuthorsId);
+            ViewBag.CountryPublishedId = new SelectList(db.CountryPublisheds, "Id", "CountryName", book.CountryPublishedId);
             return View(book);
         }
 
@@ -89,7 +86,7 @@ namespace BookStore.MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Name,Price,Description,Image,PagesCount,CreationDate,LastModificationDate,AuthorsId,GenreId,CountryPublishedId")] Book book)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Title,Price,Description,PagesCount,CountryPublishedId,AuthorsId")] Book book)
         {
             if (ModelState.IsValid)
             {
@@ -97,9 +94,8 @@ namespace BookStore.MVC.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewBag.AuthorsId = new SelectList(db.Authors, "Id", "Name", book.AuthorsId);
-            ViewBag.GenreId = new SelectList(db.Genres, "Id", "Name", book.GenreId);
-            ViewBag.CountryPublishedId = new SelectList(db.CountryPublisheds, "Id", "Name", book.CountryPublishedId);
+            ViewBag.AuthorsId = new SelectList(db.Authors, "Id", "FullName", book.AuthorsId);
+            ViewBag.CountryPublishedId = new SelectList(db.CountryPublisheds, "Id", "CountryName", book.CountryPublishedId);
             return View(book);
         }
 

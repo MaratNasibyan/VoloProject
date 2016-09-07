@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BookStore.MVC.Models.Book>
+﻿@model IEnumerable<BookStore.Entities.Book>
 
 @{
     ViewBag.Title = "Index";
@@ -12,7 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.Title)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Price)
@@ -21,25 +21,13 @@
             @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Image)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.PagesCount)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CreationDate)
+            @Html.DisplayNameFor(model => model.Author.FullName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LastModificationDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Author.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Genre.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CountryPublished.Name)
+            @Html.DisplayNameFor(model => model.CountryPublished.CountryName)
         </th>
         <th></th>
     </tr>
@@ -47,7 +35,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.DisplayFor(modelItem => item.Title)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Price)
@@ -56,25 +44,13 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Image)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.PagesCount)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CreationDate)
+            @Html.DisplayFor(modelItem => item.Author.FullName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.LastModificationDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Author.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Genre.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CountryPublished.Name)
+            @Html.DisplayFor(modelItem => item.CountryPublished.CountryName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

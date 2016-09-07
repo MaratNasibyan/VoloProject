@@ -7,19 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BookStore.MVC.Models
+namespace BookStore.Entities
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class PhoneCode
+    public partial class AttributeBook
     {
         public int Id { get; set; }
-        public int Code { get; set; }
-        public int CountryPublishedId { get; set; }
-        public Nullable<System.DateTime> CreationDate { get; set; }
-        public Nullable<System.DateTime> LastModificationDate { get; set; }
+        public int BooksId { get; set; }
+        public int AttributesId { get; set; }
     
-        public virtual CountryPublished CountryPublished { get; set; }
+        public virtual Attribute Attribute { get; set; }
+        public virtual Book Book { get; set; }
     }
 }

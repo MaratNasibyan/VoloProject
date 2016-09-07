@@ -7,27 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BookStore.MVC.Models
+namespace BookStore.Entities
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Author
+    public partial class Attribute
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Author()
+        public Attribute()
         {
-            this.Books = new HashSet<Book>();
+            this.AttributeBooks = new HashSet<AttributeBook>();
+            this.AttributeValues = new HashSet<AttributeValue>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Surname { get; set; }
-        public Nullable<System.DateTime> DateBirth { get; set; }
-        public Nullable<System.DateTime> CreationDate { get; set; }
-        public Nullable<System.DateTime> LastModificationDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Book> Books { get; set; }
+        public virtual ICollection<AttributeBook> AttributeBooks { get; set; }
+        public virtual AttributeType AttributeType { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AttributeValue> AttributeValues { get; set; }
     }
 }

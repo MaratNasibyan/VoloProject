@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BookStore.MVC.Models
+namespace BookStore.Entities
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities1 : DbContext
+    public partial class BookDatabaseEntities : DbContext
     {
-        public Entities1()
-            : base("name=Entities1")
+        public BookDatabaseEntities()
+            : base("name=BookDatabaseEntities")
         {
         }
     
@@ -25,11 +25,13 @@ namespace BookStore.MVC.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<AttributeBook> AttributeBooks { get; set; }
+        public virtual DbSet<Attribute> Attributes { get; set; }
+        public virtual DbSet<AttributeType> AttributeTypes { get; set; }
+        public virtual DbSet<AttributeValue> AttributeValues { get; set; }
         public virtual DbSet<Author> Authors { get; set; }
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<CountryPublished> CountryPublisheds { get; set; }
-        public virtual DbSet<Genre> Genres { get; set; }
-        public virtual DbSet<PhoneCode> PhoneCodes { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<ImagePatch> ImagePatchs { get; set; }
     }
 }

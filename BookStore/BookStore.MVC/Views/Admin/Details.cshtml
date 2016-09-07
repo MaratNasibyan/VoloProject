@@ -1,4 +1,4 @@
-﻿@model BookStore.MVC.Models.Book
+﻿@model BookStore.Entities.Book
 
 @{
     ViewBag.Title = "Details";
@@ -11,11 +11,11 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.Title)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Name)
+            @Html.DisplayFor(model => model.Title)
         </dd>
 
         <dt>
@@ -35,14 +35,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Image)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.PagesCount)
         </dt>
 
@@ -51,43 +43,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CreationDate)
+            @Html.DisplayNameFor(model => model.Author.FullName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CreationDate)
+            @Html.DisplayFor(model => model.Author.FullName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.LastModificationDate)
+            @Html.DisplayNameFor(model => model.CountryPublished.CountryName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.LastModificationDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Author.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Author.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Genre.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Genre.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CountryPublished.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CountryPublished.Name)
+            @Html.DisplayFor(model => model.CountryPublished.CountryName)
         </dd>
 
     </dl>

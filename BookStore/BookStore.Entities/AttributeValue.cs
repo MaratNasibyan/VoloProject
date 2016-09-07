@@ -7,18 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BookStore.MVC.Models
+namespace BookStore.Entities
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class AttributeValue
     {
-        public short Id { get; set; }
-        public string UserName { get; set; }
-        public string UserPass { get; set; }
-        public Nullable<System.DateTime> CreationDate { get; set; }
-        public Nullable<System.DateTime> LastModificationDate { get; set; }
-        public Nullable<int> Role { get; set; }
+        public int Id { get; set; }
+        public string value { get; set; }
+        public int AttributeId { get; set; }
+    
+        public virtual Attribute Attribute { get; set; }
     }
 }
